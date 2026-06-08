@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>영도 리스트 관리</title>
+  <link rel="stylesheet" href="manage.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <h1>영도 관리</h1>
+    <ul id="folder-nav"></ul>
+    <form id="new-folder-form">
+      <input id="new-folder" type="text" placeholder="새 폴더 이름">
+      <button type="submit">＋ 폴더</button>
+    </form>
+    <p id="new-folder-hint"></p>
+  </aside>
+  <main>
+    <header id="main-header">
+      <h2 id="folder-title">전체</h2>
+      <input id="search" type="search" placeholder="제목 · 채널 · 태그 검색">
+    </header>
+    <form id="add-form">
+      <input id="add-url" type="url" placeholder="유튜브 / 치지직 클립 URL" required>
+      <input id="add-title" type="text" placeholder="제목 (선택)">
+      <input id="add-start" type="text" placeholder="시작 (예: 1:30)">
+      <input id="add-end" type="text" placeholder="종료 (예: 2:05)">
+      <button type="submit">＋ 영도 추가</button>
+      <span id="add-status"></span>
+    </form>
+    <div id="bulk" hidden>
+      <span id="bulk-count"></span>
+      <select id="bulk-folder"></select>
+      <button id="bulk-move" type="button">이동</button>
+      <button id="bulk-clear" type="button">선택 해제</button>
+    </div>
+    <table id="grid">
+      <thead>
+        <tr><th><input id="check-all" type="checkbox" title="전체 선택"></th><th></th><th>제목</th><th>폴더</th><th>태그</th><th>구간</th><th></th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" hidden>항목이 없습니다.</p>
+  </main>
+  <datalist id="folder-list"></datalist>
+  <template id="row-tpl">
+    <tr class="row">
+      <td><input class="r-sel" type="checkbox"></td>
+      <td><img class="logo" alt=""></td>
+      <td><input class="r-title" type="text"></td>
+      <td><select class="r-folder"></select></td>
+      <td><input class="r-tags" type="text" placeholder="쉼표로 구분"></td>
+      <td class="r-trim"></td>
+      <td><button class="r-del" title="삭제">✕</button></td>
+    </tr>
+  </template>
+  <script type="module" src="manage.js"></script>
+</body>
+</html>

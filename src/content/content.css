@@ -1,0 +1,56 @@
+.yds-panel {
+  --bg: #fff;
+  --bg-sub: #fafafa;
+  --text: #222;
+  --text-sub: #999;
+  --border: #e8e8e8;
+  --row-border: #f2f2f2;
+  --input-border: #ccc;
+  --btn-bg: #f6f6f6;
+  --btn-bg-hover: #ededed;
+  --accent: #15c47e;
+  --star: #f5a623;
+  position: fixed;
+  z-index: 2147483646;
+  width: clamp(220px, 24vw, 320px);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .25);
+  overflow: hidden;
+  font-family: -apple-system, "Apple SD Gothic Neo", sans-serif;
+  font-size: 13px;
+  color: var(--text);
+}
+.yds-panel[data-theme="dark"] {
+  --bg: #141517;
+  --bg-sub: #1d1f22;
+  --text: #e8e8e8;
+  --text-sub: #9aa0a6;
+  --border: #2c2f34;
+  --row-border: #232629;
+  --input-border: #3a3e44;
+  --btn-bg: #26292e;
+  --btn-bg-hover: #30343a;
+}
+.yds-header { display: flex; flex-direction: column; gap: 6px; padding: 10px; border-bottom: 1px solid var(--border); }
+.yds-brand { font-size: 13px; }
+.yds-search { padding: 6px 8px; border: 1px solid var(--input-border); border-radius: 6px; font-size: 13px; background: var(--bg); color: var(--text); }
+.yds-folder { padding: 6px 8px; border: 1px solid var(--input-border); border-radius: 6px; font-size: 13px; background: var(--bg); color: var(--text); }
+.yds-list { list-style: none; margin: 0; padding: 0; overflow-y: auto; }
+.yds-item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid var(--row-border); }
+.yds-item:hover { background: var(--bg-sub); }
+.yds-logo { width: 22px; height: 22px; object-fit: contain; flex: none; border-radius: 4px; }
+.yds-logo.yds-fav { box-shadow: 0 0 0 2px var(--star); }
+.yds-meta { flex: 1; min-width: 0; }
+.yds-title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.yds-sub { color: var(--text-sub); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.yds-copy { cursor: pointer; border: 1px solid var(--input-border); border-radius: 6px; background: var(--btn-bg); color: var(--text); padding: 6px 10px; white-space: nowrap; font-size: 13px; }
+.yds-copy:hover { background: var(--btn-bg-hover); }
+.yds-copy.done { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+@media (max-width: 720px) {
+  .yds-panel { width: min(92vw, 320px); }
+}

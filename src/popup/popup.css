@@ -1,3 +1,30 @@
+:root {
+  --bg: #fff;
+  --bg-sub: #fafafa;
+  --text: #222;
+  --text-sub: #999;
+  --section-text: #888;
+  --border: #e8e8e8;
+  --input-border: #ccc;
+  --btn-bg: #f6f6f6;
+  --btn-bg-hover: #ededed;
+  --row-border: #f2f2f2;
+  --accent: #15c47e;
+  --star: #f5a623;
+}
+:root[data-theme="dark"] {
+  --bg: #141517;
+  --bg-sub: #1d1f22;
+  --text: #e8e8e8;
+  --text-sub: #9aa0a6;
+  --section-text: #9aa0a6;
+  --border: #2c2f34;
+  --input-border: #3a3e44;
+  --btn-bg: #26292e;
+  --btn-bg-hover: #30343a;
+  --row-border: #232629;
+}
+
 * { box-sizing: border-box; }
 body {
   width: 380px;
@@ -5,7 +32,8 @@ body {
   margin: 0;
   font-family: -apple-system, "Apple SD Gothic Neo", sans-serif;
   font-size: 13px;
-  color: #222;
+  color: var(--text);
+  background: var(--bg);
 }
 header {
   display: flex;
@@ -13,22 +41,46 @@ header {
   padding: 8px;
   position: sticky;
   top: 0;
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
-#search { flex: 1; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; }
-button { cursor: pointer; border: 1px solid #ccc; border-radius: 6px; background: #f6f6f6; padding: 6px 10px; }
-button:hover { background: #ededed; }
+input, button { color: var(--text); }
+#search { flex: 1; padding: 6px 8px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--bg); }
+button { cursor: pointer; border: 1px solid var(--input-border); border-radius: 6px; background: var(--btn-bg); padding: 6px 10px; }
+button:hover { background: var(--btn-bg-hover); }
 #sync { white-space: nowrap; }
-#status { padding: 4px 10px; color: #888; font-size: 12px; min-height: 18px; }
+#add-toggle { font-size: 16px; line-height: 1; padding: 4px 10px; }
+#add-form { display: flex; flex-direction: column; gap: 6px; padding: 8px; border-bottom: 1px solid var(--border); background: var(--bg-sub); }
+#add-form .time-row { display: flex; gap: 6px; }
+#add-form .time-row input { flex: 1; min-width: 0; }
+#add-form input { padding: 6px 8px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--bg); }
+#add-form button { white-space: nowrap; }
+#filter-row { padding: 6px 8px; border-bottom: 1px solid var(--border); background: var(--bg-sub); }
+#folder-filter { width: 100%; padding: 5px 8px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--bg); color: var(--text); font-size: 13px; }
+#status { padding: 4px 10px; color: var(--section-text); font-size: 12px; min-height: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.chip { cursor: pointer; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-sub); color: var(--text-sub); padding: 1px 7px; font-size: 11px; line-height: 1.6; }
+.chip:hover { background: var(--btn-bg-hover); color: var(--text); }
+.edit-fields .e-folder, .edit-fields .e-tags { width: 100%; }
 ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; }
-.item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid #f2f2f2; }
-.item:hover { background: #fafafa; }
-.badge { font-size: 10px; padding: 2px 5px; border-radius: 4px; color: #fff; white-space: nowrap; }
-.badge.YOUTUBE { background: #e23; }
-.badge.CHZZK_CLIP { background: #15c47e; }
+.item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid var(--row-border); }
+.item:hover { background: var(--bg-sub); }
+.logo { width: 22px; height: 22px; object-fit: contain; flex: none; }
 .meta { flex: 1; min-width: 0; }
 .title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.sub { color: #999; font-size: 11px; }
+.sub { color: var(--text-sub); font-size: 11px; }
 .copy { white-space: nowrap; }
-.copy.done { background: #15c47e; color: #fff; border-color: #15c47e; }
+.copy.done { background: var(--accent); color: #fff; border-color: var(--accent); }
+.edit { white-space: nowrap; }
+.editing { background: var(--bg-sub); }
+.edit-fields { display: flex; flex-direction: column; gap: 6px; width: 100%; }
+.edit-fields .time-row { display: flex; gap: 6px; }
+.edit-fields input { flex: 1; min-width: 0; padding: 6px 8px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--bg); }
+.edit-fields .e-title { width: 100%; }
+.edit-fields button { white-space: nowrap; }
+.del { border: none; background: none; padding: 2px 6px; color: var(--text-sub); font-size: 13px; }
+.del:hover { background: none; color: #e23; }
+.fav { border: none; background: none; padding: 2px 4px; font-size: 16px; line-height: 1; color: var(--text-sub); }
+.fav:hover { background: none; color: var(--star); }
+.fav.on { color: var(--star); }
+.section { padding: 6px 10px; font-size: 11px; font-weight: 700; color: var(--section-text); background: var(--bg-sub); border-bottom: 1px solid var(--border); }

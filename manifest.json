@@ -1,12 +1,39 @@
 {
   "manifest_version": 3,
-  "name": "치지직 영도 서포터",
+  "name": "영도 저장소",
   "version": "0.1.0",
-  "description": "치지직 영상도네(영도)용 클립 병기고 - 내 후원내역에서 영상을 자동으로 모으고, 태그/폴더로 관리하고, 영도할 때 바로 검색·복사",
+  "description": "치지직 영상도네(영도)용 클립 저장소 - 내 후원내역에서 영상을 자동으로 모으고, 폴더/태그로 관리하고, 영도할 때 바로 검색·복사",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
     "default_popup": "src/popup/popup.html",
-    "default_title": "영도 서포터"
+    "default_title": "영도 저장소",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
+  "options_page": "src/manage/manage.html",
   "permissions": ["storage"],
-  "host_permissions": ["https://api.chzzk.naver.com/*"]
+  "host_permissions": ["https://api.chzzk.naver.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://chzzk.naver.com/*"],
+      "js": ["src/content/content.js"],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/core/library.js", "icons/*"],
+      "matches": ["https://chzzk.naver.com/*"]
+    }
+  ]
 }
