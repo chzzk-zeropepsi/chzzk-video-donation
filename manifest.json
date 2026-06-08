@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "치지직 영도 서포터",
+  "version": "0.1.0",
+  "description": "치지직 영상도네(영도)용 클립 병기고 - 내 후원내역에서 영상을 자동으로 모으고, 태그/폴더로 관리하고, 영도할 때 바로 검색·복사",
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "영도 서포터"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["https://api.chzzk.naver.com/*"]
+}

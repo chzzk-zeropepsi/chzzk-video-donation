@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+body {
+  width: 380px;
+  max-height: 540px;
+  margin: 0;
+  font-family: -apple-system, "Apple SD Gothic Neo", sans-serif;
+  font-size: 13px;
+  color: #222;
+}
+header {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+#search { flex: 1; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; }
+button { cursor: pointer; border: 1px solid #ccc; border-radius: 6px; background: #f6f6f6; padding: 6px 10px; }
+button:hover { background: #ededed; }
+#sync { white-space: nowrap; }
+#status { padding: 4px 10px; color: #888; font-size: 12px; min-height: 18px; }
+ul { list-style: none; margin: 0; padding: 0; overflow-y: auto; }
+.item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid #f2f2f2; }
+.item:hover { background: #fafafa; }
+.badge { font-size: 10px; padding: 2px 5px; border-radius: 4px; color: #fff; white-space: nowrap; }
+.badge.YOUTUBE { background: #e23; }
+.badge.CHZZK_CLIP { background: #15c47e; }
+.meta { flex: 1; min-width: 0; }
+.title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sub { color: #999; font-size: 11px; }
+.copy { white-space: nowrap; }
+.copy.done { background: #15c47e; color: #fff; border-color: #15c47e; }

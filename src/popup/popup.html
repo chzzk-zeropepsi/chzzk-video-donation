@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <input id="search" type="search" placeholder="제목 · 채널 · 태그 검색">
+    <button id="sync" title="치지직 후원내역에서 영도 영상 불러오기">동기화</button>
+  </header>
+  <div id="status"></div>
+  <ul id="list"></ul>
+  <template id="item-tpl">
+    <li class="item">
+      <span class="badge"></span>
+      <div class="meta">
+        <div class="title"></div>
+        <div class="sub"></div>
+      </div>
+      <button class="copy" title="링크 복사">복사</button>
+    </li>
+  </template>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
