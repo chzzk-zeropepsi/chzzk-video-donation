@@ -1,6 +1,12 @@
 # 영도 저장소
 
+[![release](https://img.shields.io/github/v/release/chzzk-zeropepsi/chzzk-video-donation)](https://github.com/chzzk-zeropepsi/chzzk-video-donation/releases)
+[![downloads](https://img.shields.io/github/downloads/chzzk-zeropepsi/chzzk-video-donation/total)](https://github.com/chzzk-zeropepsi/chzzk-video-donation/releases)
+[![latest downloads](https://img.shields.io/github/downloads/chzzk-zeropepsi/chzzk-video-donation/latest/total)](https://github.com/chzzk-zeropepsi/chzzk-video-donation/releases/latest)
+
 치지직 영상도네(영도)용 클립 저장소. 내 후원내역에서 영도 영상을 자동으로 모으고, 폴더/태그로 관리하고, 검색해서 바로 링크를 복사한다.
+
+> 다운로드 수 배지는 **GitHub Releases에 올린 zip(릴리즈 에셋)** 의 다운로드를 집계한다. 배포는 Releases에 zip을 첨부해 진행한다.
 
 ## 설치 (개발자 모드)
 1. 크로미움 브라우저에서 `chrome://extensions` 열기
